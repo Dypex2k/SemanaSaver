@@ -106,15 +106,15 @@ function saveData() {
             currentSavings: saldo.toFixed(2),
             weeklyIncome: weeklyIncome.toFixed(2)
         };
-        window.localStorage.setItem('savedData', JSON.stringify(dataToSave));
+        window.localStorage.setItem('savedDataSemanaSaver', JSON.stringify(dataToSave));
     } catch (e) {
-        console.error('Error al guardar datos en el LocalStorage:', e);
+        console.error('Error al guardar datos en el LocalStorage de SemanaSaver:', e);
     }
 }
 
 function loadSavedData() {
     // Carga los datos almacenados desde el LocalStorage al cargar la página
-    const savedData = window.localStorage.getItem('savedData');
+    const savedData = window.localStorage.getItem('savedDataSemanaSaver');
 
     if (savedData !== null) {
         const parsedData = JSON.parse(savedData);
@@ -151,9 +151,9 @@ function loadSavedData() {
 function clearStoredData() {
     // Limpia los datos almacenados en el LocalStorage
     try {
-        window.localStorage.removeItem('savedData');
+        window.localStorage.removeItem('savedDataSemanaSaver');
     } catch (e) {
-        console.error('Error al limpiar el LocalStorage:', e);
+        console.error('Error al limpiar el LocalStorage de SemanaSaver:', e);
     }
 }
 
@@ -163,4 +163,4 @@ function getMonthName(month) {
         "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
     ];
     return months[month];
-}
+        }
